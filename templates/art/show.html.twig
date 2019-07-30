@@ -1,0 +1,30 @@
+{% block title %}Read: {{ title }}{% endblock %}
+{% block body %}
+    <div>
+        <p>
+            Moi c'que j'aime dans les forêts, c'est qu'on peut se balader !
+        </p>
+        <p>
+            On peut cueillir des salades, et après, on peut les manger !
+        </p>
+        <p>
+            Sur le bord de la rivière, on peut aller se baigner !
+        </p>
+        <p>
+            Mais c'est un p'tit peu galère, si on glisse on peut s'noyer !
+        </p>
+        <p>
+            Na-nanaa, na-nana-naaa, na-nana-naaa !
+        </p>
+    </div>
+    <h2>Commentaires :</h2>
+    <p>{{ comments|length }} commentaires postés.</p>
+    <ul>
+        {% for comment in comments %}
+            <li>
+                <b>{{ comment['name'] }}</b>
+                {{ comment['text'] }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+{% extends 'base.html.twig' %}
